@@ -2,21 +2,9 @@ let quizQuestions = [];
 let quizAnswers = [];
 let correctAnswers = [];
 
+
 window.createQuiz = function() {
     // Get the quiz title with error checking
-    let titleElement = document.querySelector('.quiz-title h1');
-    let title = '';
-    
-    if (titleElement) {
-        title = titleElement.textContent;
-    } else {
-        console.warn('Quiz title element not found');
-        title = 'Untitled Quiz'; // Default title
-    }
-    
-    // Store it in localStorage
-    localStorage.setItem('quizTitle', title);
-    console.log('Quiz title saved:', title);
     
     quizQuestions.length = 0;
     quizAnswers.length = 0;
@@ -29,7 +17,6 @@ window.createQuiz = function() {
         const questionInput = container.querySelector('input[type="text"]');
         if (questionInput) {
             quizQuestions.push(questionInput.value);
-            
             // Get answer inputs for this question
             const answerInputs = container.querySelectorAll('.answer input');
             let questionAnswers = [];
@@ -56,23 +43,28 @@ window.createQuiz = function() {
     localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
     console.log('Correct answers saved:', correctAnswers);
     // Get quiz description
-    const descriptionElement = document.querySelector('.quiz-title input[placeholder="Quiz Description"]');
+    const descriptionElement = document.querySelector('#quizDescription');
     let description = '';
-    //Get quiz Title
-    titleElement = document.querySelector('#quizTitle');
+    
+    if (descriptionElement) {
+        description = descriptionElement.value || 'No description provided';
+    } else {
+        console.warn('Quiz description element not found');
+        description = 'No description provided';
+    }
+
+    const titleElement = document.querySelector('.quiz-title input[placeholder="Quiz Title"]');
+    let title = '';
+    
     if (titleElement) {
         title = titleElement.value;
     } else {
         console.warn('Quiz title element not found');
-        title = 'Untitled Quiz'; // Default title
     }
-    // Skip re-declaring titleElement since it was already declared above
-    if (descriptionElement) {
-        description = descriptionElement.value;
-    } else {
-        console.warn('Quiz description element not found');
-        description = 'No description provided'; // Default description
-    }
+    
+    // Store it in localStorage
+    localStorage.setItem('quizTitle', title);
+    console.log('Quiz title saved:', title);
 
     // Save quiz description to localStorage
     localStorage.setItem('quizDescription', description);
@@ -151,7 +143,7 @@ window.setCorrectAnswer = function(button) {
     
     // Reset all buttons in this question to default style
     correctButtons.forEach(btn => {
-        btn.style.backgroundColor = 'var(--white)';
+        btn.style.backgroundColor = 'var(--light-gray)';
         btn.style.transform = 'none';
         btn.style.boxShadow = 'none';
     });
@@ -160,6 +152,7 @@ window.setCorrectAnswer = function(button) {
     button.style.backgroundColor = 'var(--dark-gray)';
     button.style.transform = 'translateY(-2px)';
     button.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
+    button.style.color = 'var(--white)';
 
     // Store the correct answer
     const questionIndex = button.closest('.quiz-question').dataset.index;
@@ -250,6 +243,8 @@ window.checkQuiz = function() {
             tryAgainBtn.style.display = 'block';
         }
     }
+    // Show result section
+
 }
 
 let timer;
@@ -276,5 +271,19 @@ window.startTimer = function() {
 
 window.stopTimer = function() {
     clearInterval(timer);
+}
+
+window.onload = function() {
+    console.log('onload');
+    // Get stored title and description
+    const storedTitle = localStorage.getItem('quizTitle') || 'Quiz Title';
+    const storedDescription = localStorage.getItem('quizDescription') || 'No description provided';
+    
+    // Update title and description in the HTML
+    const titleElement = document.querySelector('.quiz-title h1');
+    const descriptionElement = document.querySelector('.quiz-title p');
+    
+    if (titleElement) titleElement.textContent = storedTitle;
+    if (descriptionElement) descriptionElement.textContent = storedDescription;
 }
 
