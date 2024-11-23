@@ -18,14 +18,14 @@ class Answer {
 }
 
 // make answers
-const answer1 = new Answer("example question 1", true);
-const answer2 = new Answer("example question 2", false);
-const answer3 = new Answer("example question 3", false);
-const answer4 = new Answer("example question 4", false);
-const answer5 = new Answer("example question 5", true);
-const answer6 = new Answer("example question 6", false);
-const answer7 = new Answer("example question 7", false);
-const answer8 = new Answer("example question 8", false);
+const answer1 = new Answer("example answer1", true);
+const answer2 = new Answer("example answer2", false);
+const answer3 = new Answer("example answer3", false);
+const answer4 = new Answer("example answer4", false);
+const answer5 = new Answer("example answer5", true);
+const answer6 = new Answer("example answer6", false);
+const answer7 = new Answer("example answer7", false);
+const answer8 = new Answer("example answer8", false);
 
 // Create a question with answers
 const question1 = new Question("example question 1", [answer1, answer2, answer3, answer4]);
