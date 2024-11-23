@@ -244,6 +244,11 @@ window.checkQuiz = function() {
         }
     }
     // Show result section
+    // Hide the "Get Result" button after showing results
+    const resultButton = document.querySelector('.result-section button');
+    if (resultButton) {
+        resultButton.style.display = 'none';
+    }
 
 }
 
@@ -286,4 +291,3 @@ window.onload = function() {
     if (titleElement) titleElement.textContent = storedTitle;
     if (descriptionElement) descriptionElement.textContent = storedDescription;
 }
-
