@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Quizz</h1>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+    </header>
+    <section class="quiz-title">
+        <h1>Quiz Title</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    </section>
+
+    <div class="quiz-info" style="display: flex; justify-content: space-between; width: 50%; margin: 20px auto; padding: 15px; background-color: var(--white); border: 1px solid black; border-radius: 10px;">
+        <div class="question-count">
+            <p>Question: <span id="current-question">1</span>/<span id="total-questions">10</span></p>
+        </div>
+        <div class="timer">
+            <p>Time: <span id="time">00:00</span></p>
+        </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <section class="quiz-container">
+        <div class="quiz-question">
+            <h2>Quiz Question</h2>
+            <div class="answers-container">
+                <div class="answer">
+                    <button class="option" id="answer1">Answer 1</button>
+                    <button class="option" id="answer2">Answer 2</button>
+                    <button class="option" id="answer3">Answer 3</button>
+                    <button class="option" id="answer4">Answer 4</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-question">
+            <h2>Quiz Question</h2>
+            <div class="answers-container">
+                <div class="answer">
+                    <button class="option" id="answer1">Answer 1</button>
+                    <button class="option" id="answer2">Answer 2</button>
+                    <button class="option" id="answer3">Answer 3</button>
+                    <button class="option" id="answer4">Answer 4</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-question">
+            <h2>Quiz Question</h2>
+            <div class="answers-container">
+                <div class="answer">
+                    <button class="option" id="answer1">Answer 1</button>
+                    <button class="option" id="answer2">Answer 2</button>
+                    <button class="option" id="answer3">Answer 3</button>
+                    <button class="option" id="answer4">Answer 4</button>
+                </div>
+            </div>
+        </div>
+        <button class="submit-btn">Submit</button>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Copyright &copy; 2024 Quiz. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

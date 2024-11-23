@@ -1,0 +1,17 @@
+@media (max-width: 1024px) {
+    .quiz-title{
+        width: 80%;
+    }
+    .quiz-container{
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-title{
+        width: 95%;
+    }
+    .quiz-container{
+        width: 95%;
+    }
+}
