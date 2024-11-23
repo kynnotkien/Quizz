@@ -11,44 +11,42 @@
 <body>
     <header class="header">
         <h1>Quizz</h1>
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+        <a href="index.html">Home</a>
+        <a href="makequiz.html">Teacher</a>
     </header>
     <section class="quiz-title">
         <h1>Quiz Title</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        <button onclick="window.startQuiz()">Start Quiz</button>
     </section>
-
+    
     <div class="quiz-info" style="display: flex; justify-content: space-between; width: 50%; margin: 20px auto; padding: 15px; background-color: var(--white); border: 1px solid black; border-radius: 10px;">
-        <div class="question-count">
-            <p>Question: <span id="current-question">1</span>/<span id="total-questions">10</span></p>
-        </div>
         <div class="timer">
             <p>Time: <span id="time">00:00</span></p>
         </div>
     </div>
 
     <!-- Quiz Container -->
-    <section class="quiz-container">
+    <section class="quiz-container active">
         <div class="quiz-question" id="question1" data-index="0">
             <h2>Quiz Question</h2>
             <div class="answers-container">
                 <div class="answer">
-                    <button class="option" onclick="window.checkCorrect(this)" id="0" data-index="0">Answer 1</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="0" data-index="1">Answer 2</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="0" data-index="2">Answer 3</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="0" data-index="3">Answer 4</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="0" data-index="0">Answer 1</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="0" data-index="1">Answer 2</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="0" data-index="2">Answer 3</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="0" data-index="3">Answer 4</button>
                 </div>
             </div>
         </div>
-        <div class="quiz-question" id="question2" data-index="1">
+        <div class="quiz-question" id="question2" data-index="4">
             <h2>Quiz Question</h2>
             <div class="answers-container">
                 <div class="answer">
-                    <button class="option" onclick="window.checkCorrect(this)" id="1" data-index="0">Answer 1</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="1" data-index="1">Answer 2</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="1" data-index="2">Answer 3</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="1" data-index="3">Answer 4</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="1" data-index="0">Answer 1</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="1" data-index="1">Answer 2</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="1" data-index="2">Answer 3</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="1" data-index="3">Answer 4</button>
                 </div>
             </div>
         </div>
@@ -56,20 +54,24 @@
             <h2>Quiz Question</h2>
             <div class="answers-container">
                 <div class="answer">
-                    <button class="option" onclick="window.checkCorrect(this)" id="2" data-index="0">Answer 1</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="2" data-index="1">Answer 2</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="2" data-index="2">Answer 3</button>
-                    <button class="option" onclick="window.checkCorrect(this)" id="2" data-index="3">Answer 4</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="2" data-index="0">Answer 1</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="2" data-index="1">Answer 2</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="2" data-index="2">Answer 3</button>
+                    <button class="option selected" onclick="window.checkCorrect(this)" id="2" data-index="3">Answer 4</button>
                 </div>
             </div>
         </div>
-        <button class="submit-btn" onclick="window.checkQuiz()">Submit</button>
+
+    </section>
+    <section class="quiz-title result-section">
+        <h2>Quiz Result</h2>
+        <button onclick="window.checkQuiz(), window.stopTimer()">Get Result</button>
+        <p>Your score is <span id="score"></span> out of <span id="total"></span></p>
+        <p>Percentage: <span id="percentage"></span>%</p>
+        <button onclick="window.location.href='quizz.html'" class="try-again-btn">Try Again</button>
     </section>
     
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>Copyright &copy; 2024 Quiz. All rights reserved.</p>
-    </footer>
 </body>
 </html>

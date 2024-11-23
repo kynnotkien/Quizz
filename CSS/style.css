@@ -54,6 +54,14 @@ body{
     margin-bottom: 20px;
 }
 
+.container button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
 .quiz-title{
     margin: 0 auto;
     width: 50%;
@@ -71,6 +79,21 @@ body{
 .quiz-title p{
     font-size: 20px;
 } 
+
+.quiz-title input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.quiz-title button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    width: fit-content;
+    cursor: pointer;
+    margin: 0 auto;
+}
 
 .answer{
     display: flex;
@@ -91,9 +114,6 @@ body{
     transition: all 0.2s ease;
 }
 
-.option.selected{
-    background-color: var(--dark-gray);
-}
 
 .option:hover {
     background-color: var(--dark-gray);
@@ -125,6 +145,12 @@ body{
     padding: 20px;
     border-radius: 10px;
     border: 1px solid black;
+}
+
+.quiz-question input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .quiz-question h2{
@@ -177,4 +203,22 @@ body{
     padding: 20px;
     background-color: var(--dark-gray);
     color: var(--white);
+}
+
+.active{
+    display: none;
+}
+
+.result-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 90vh;
+    align-items: center;
+    margin: auto;
+}
+
+.try-again-btn{
+    display: none;
+    margin-top: 20px;
 }
