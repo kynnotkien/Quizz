@@ -1,4 +1,4 @@
-TEST YOUR READING SKILLS BY ANSWER TO QUESTIONS BASED ON THE READING BELOW
+TEST YOUR READING SKILLS BY ANSWERING TO QUESTIONS BASED ON THE READING BELOW
 
 Reading:
 In the small town of Eldenwick, nestled in the shadow of the Mistspire Mountains, strange rumors had been circulating for decades. Locals spoke of an ancient artifact hidden deep within the mountains—a crystal capable of bending time itself. Known as the Crystal of Eternity, it was said to grant unimaginable power to anyone who possessed it. Yet, with such power came a grave curse: the crystal would show its wielder the future, but never allow them to change it.
